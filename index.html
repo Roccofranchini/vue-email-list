@@ -8,21 +8,25 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 	</head>
 	<body>
 		<div id="root">
-			<ul>
-				<li>{{ mail1 }}</li>
-				<li>{{ mail2 }}</li>
-				<li>{{ mail3 }}</li>
-				<li>{{ mail4 }}</li>
-				<li>{{ mail5 }}</li>
-				<li>{{ mail6 }}</li>
-				<li>{{ mail7 }}</li>
-				<li>{{ mail8 }}</li>
-				<li>{{ mail9 }}</li>
-				<li>{{ mail10 }}</li>
-			</ul>
+			<div v-if="error">
+				<p>si è verificato un errore</p>
+			</div>
+			<div v-else>
+				<ul v-if="mails.length == 10">
+					<li v-for="mail in mails">{{ mail }}</li>
+				</ul>
+				<i v-else class="fas fa-spinner fa-spin fa-3x"></i>
+			</div>
 		</div>
 		<script src="js/script.js"></script>
 	</body>
