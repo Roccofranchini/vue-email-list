@@ -16,15 +16,7 @@ const app = new Vue({
 			return filteredMails.sort();
 		},
 	},
-	methods: {
-		getRndomMail(mail) {
-			axios
-				.get("https://flynn.boolean.careers/exercises/api/random/mail")
-				.then((res) => {
-					this[mail] = res.data.response;
-				});
-		},
-	},
+	methods: {},
 	created() {
 		for (let i = 0; i < 10; i++)
 			axios
