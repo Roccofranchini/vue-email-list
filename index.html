@@ -23,7 +23,7 @@
 			</div>
 			<div v-else>
 				<ul v-if="mails.length == 10">
-					<li v-for="mail in mails">{{ mail }}</li>
+					<li v-for="mail in sortedMails">{{ mail }}</li>
 				</ul>
 				<i v-else class="fas fa-spinner fa-spin fa-3x"></i>
 			</div>

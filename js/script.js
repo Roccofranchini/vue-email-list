@@ -7,6 +7,11 @@ const app = new Vue({
 	data: {
 		mails: [],
 	},
+	computed: {
+		sortedMails() {
+			return this.mails.sort();
+		},
+	},
 	methods: {
 		getRndomMail(mail) {
 			axios
