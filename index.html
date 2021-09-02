@@ -21,9 +21,10 @@
 			<div v-if="error">
 				<p>si è verificato un errore</p>
 			</div>
-			<div v-else>
+			<div>
+				<div><input type="text" v-model.trim="filter" /></div>
 				<ul v-if="mails.length == 10">
-					<li v-for="mail in sortedMails">{{ mail }}</li>
+					<li v-for="mail in filteredMails">{{ mail }}</li>
 				</ul>
 				<i v-else class="fas fa-spinner fa-spin fa-3x"></i>
 			</div>

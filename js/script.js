@@ -6,10 +6,14 @@ const app = new Vue({
 	el: "#root",
 	data: {
 		mails: [],
+		error: false,
+		filter: "",
 	},
 	computed: {
-		sortedMails() {
-			return this.mails.sort();
+		filteredMails() {
+			const filter = this.filter.toLowerCase();
+			const filteredMails = this.mails.filter((mail) => mail.includes(filter));
+			return filteredMails.sort();
 		},
 	},
 	methods: {
